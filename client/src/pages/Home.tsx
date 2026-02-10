@@ -1,8 +1,6 @@
 // ============================================================
-// ASNRT Home Page — "Nephro Hub" Design
-// Sections: Hero, Stats, Calculator Spotlight, About Preview,
-//           Members Preview, Education Preview, News Preview,
-//           Gallery Preview, Societies Slider
+// ASNRT Home Page — Society-focused design
+// Hero about mission, Tools & Services section with calc links
 // ============================================================
 
 import { Link } from "wouter";
@@ -12,8 +10,8 @@ import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import {
   IMAGES,
-  CALCULATOR_URL,
-  CALCULATOR_CATEGORIES,
+  NEPHROCALCS_URL,
+  OTCCALCS_URL,
   MEMBERS,
   NEWS_ITEMS,
   GALLERY_ITEMS,
@@ -26,67 +24,40 @@ import {
   Globe,
   BookOpen,
   Award,
-  Activity,
-  AlertTriangle,
-  Droplets,
-  Zap,
-  TestTube,
-  Heart,
-  Stethoscope,
-  Ruler,
-  HeartPulse,
-  Bone,
-  Shield,
-  Wrench,
   GraduationCap,
+  Stethoscope,
   Newspaper,
   Image,
   ChevronRight,
+  Calendar,
+  Mail,
+  Heart,
+  FileText,
+  Beaker,
 } from "lucide-react";
-
-const iconMap: Record<string, React.ReactNode> = {
-  Activity: <Activity className="w-5 h-5" />,
-  AlertTriangle: <AlertTriangle className="w-5 h-5" />,
-  Droplets: <Droplets className="w-5 h-5" />,
-  Zap: <Zap className="w-5 h-5" />,
-  TestTube: <TestTube className="w-5 h-5" />,
-  Heart: <Heart className="w-5 h-5" />,
-  Stethoscope: <Stethoscope className="w-5 h-5" />,
-  Ruler: <Ruler className="w-5 h-5" />,
-  HeartPulse: <HeartPulse className="w-5 h-5" />,
-  Bone: <Bone className="w-5 h-5" />,
-  Shield: <Shield className="w-5 h-5" />,
-  Users: <Users className="w-5 h-5" />,
-  Wrench: <Wrench className="w-5 h-5" />,
-};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: [0, 0, 0.2, 1] as const },
+    transition: { delay: i * 0.1, duration: 0.5, ease: [0, 0, 0.2, 1] as [number, number, number, number] },
   }),
 };
 
 export default function Home() {
   return (
     <PageLayout noBreadcrumb>
-      {/* ===== HERO ===== */}
+      {/* ===== HERO — Society Mission ===== */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        {/* Background */}
         <div className="absolute inset-0">
-          <img
-            src={IMAGES.heroBg}
-            alt=""
-            className="w-full h-full object-cover"
-          />
+          <img src={IMAGES.heroBg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50" />
         </div>
 
         <div className="container relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text */}
+            {/* Left: Mission */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -94,7 +65,7 @@ export default function Home() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/15 border border-emerald-500/25 text-emerald-300 text-sm font-medium mb-6">
                 <Globe className="w-4 h-4" />
-                Established 1996 — Serving the Arab World
+                Established 1996 — Serving 22 Arab Countries
               </div>
 
               <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
@@ -106,92 +77,74 @@ export default function Home() {
               </h1>
 
               <p className="text-lg text-white/70 mb-8 max-w-xl leading-relaxed">
-                Advancing kidney health through education, research, and collaboration across the Arab world. Access our comprehensive suite of clinical calculators and educational resources.
+                Advancing kidney health through education, research, and collaboration across the Arab world. Uniting nephrologists, researchers, and healthcare professionals to improve patient outcomes.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <a
-                  href={CALCULATOR_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative flex items-center gap-2.5 px-7 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-2xl font-bold text-base shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-500/35 hover:-translate-y-1 transition-all duration-300 group"
-                >
-                  <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <Calculator className="w-5 h-5 relative z-10" />
-                  <span className="relative z-10">Open Calculators</span>
-                  <ExternalLink className="w-4 h-4 opacity-70 relative z-10" />
-                </a>
                 <Link
                   href="/about"
+                  className="flex items-center gap-2.5 px-7 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-2xl font-bold text-base shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-500/35 hover:-translate-y-1 transition-all duration-300"
+                >
+                  About ASNRT
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href="/membership"
                   className="flex items-center gap-2 px-7 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-2xl font-semibold hover:bg-white/20 transition-all duration-200"
                 >
-                  Learn More
-                  <ArrowRight className="w-4 h-4" />
+                  <Users className="w-5 h-5" />
+                  Join Us
                 </Link>
               </div>
             </motion.div>
 
-            {/* Right: Calculator Quick Access */}
+            {/* Right: Quick Access Cards */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="hidden lg:block"
+              className="hidden lg:block space-y-4"
             >
               <div className="glass rounded-3xl p-6">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
-                    <Calculator className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-white text-lg">Calculator Hub</h3>
-                    <p className="text-white/50 text-sm">74 calculators · 13 categories</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {CALCULATOR_CATEGORIES.slice(0, 8).map((cat, i) => (
-                    <a
-                      key={cat.name}
-                      href={CALCULATOR_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2.5 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-emerald-500/30 transition-all group"
+                <h3 className="font-heading font-bold text-white text-lg mb-4">Quick Access</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { title: "Education", desc: "Patient, Nursing & Medical", icon: <BookOpen className="w-5 h-5" />, href: "/education" },
+                    { title: "Events", desc: "Congresses & Conferences", icon: <Calendar className="w-5 h-5" />, href: "/events" },
+                    { title: "Academic", desc: "Journals & Guidelines", icon: <FileText className="w-5 h-5" />, href: "/academic" },
+                    { title: "Contact", desc: "Get in Touch", icon: <Mail className="w-5 h-5" />, href: "/contact" },
+                  ].map((item) => (
+                    <Link
+                      key={item.title}
+                      href={item.href}
+                      className="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-emerald-500/30 transition-all group"
                     >
                       <span className="text-emerald-400 group-hover:text-emerald-300 transition-colors">
-                        {iconMap[cat.icon]}
+                        {item.icon}
                       </span>
                       <div>
-                        <div className="text-white text-xs font-medium leading-tight">{cat.name}</div>
-                        <div className="text-white/40 text-[10px]">{cat.count} tools</div>
+                        <div className="text-white text-sm font-medium">{item.title}</div>
+                        <div className="text-white/40 text-xs">{item.desc}</div>
                       </div>
-                    </a>
+                    </Link>
                   ))}
                 </div>
-                <a
-                  href={CALCULATOR_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 mt-4 py-2.5 rounded-xl bg-emerald-500/15 text-emerald-300 text-sm font-medium hover:bg-emerald-500/25 transition-colors"
-                >
-                  View All 13 Categories
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ===== STATS BAR ===== */}
+      {/* ===== STATS BAR — Society Stats ===== */}
       <section className="bg-white border-b border-border">
         <div className="container py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
-              { icon: <Calculator className="w-6 h-6" />, value: 74, suffix: "+", label: "Clinical Calculators" },
-              { icon: <Users className="w-6 h-6" />, value: 22, label: "Arab Countries" },
-              { icon: <BookOpen className="w-6 h-6" />, value: 13, label: "Calculator Categories" },
+              { icon: <Globe className="w-6 h-6" />, value: 22, label: "Arab Countries" },
               { icon: <Award className="w-6 h-6" />, value: 29, suffix: "+", label: "Years of Service" },
-            ].map((stat, i) => (
+              { icon: <Users className="w-6 h-6" />, value: 7, label: "Executive Members" },
+              { icon: <BookOpen className="w-6 h-6" />, value: 80, suffix: "+", label: "Educational Resources" },
+            ].map((stat, i: number) => (
               <motion.div
                 key={stat.label}
                 custom={i}
@@ -212,59 +165,6 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CALCULATOR SPOTLIGHT ===== */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={IMAGES.calculatorSpotlight} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-slate-900/85" />
-        </div>
-        <div className="container relative z-10">
-          <SectionHeading
-            tag="Featured Tool"
-            title="Nephrology Calculator Hub"
-            subtitle="The most comprehensive collection of nephrology calculators available — from eGFR equations to transplant scoring, all validated and free."
-            light
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8">
-            {CALCULATOR_CATEGORIES.map((cat, i) => (
-              <motion.a
-                key={cat.name}
-                href={CALCULATOR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                className="glass rounded-2xl p-5 hover:bg-white/12 hover:border-emerald-500/30 transition-all group"
-              >
-                <div className="flex items-start gap-3 mb-3">
-                  <span className="text-emerald-400 mt-0.5">{iconMap[cat.icon]}</span>
-                  <div>
-                    <h3 className="font-heading font-semibold text-white text-sm">{cat.name}</h3>
-                    <span className="text-emerald-400/70 text-xs font-medium">{cat.count} calculators</span>
-                  </div>
-                </div>
-                <p className="text-white/50 text-xs leading-relaxed">{cat.description}</p>
-              </motion.a>
-            ))}
-          </div>
-          <div className="text-center">
-            <a
-              href={CALCULATOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-2xl font-bold shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-            >
-              <Calculator className="w-5 h-5" />
-              Launch Calculator Hub
-              <ExternalLink className="w-4 h-4 opacity-70" />
-            </a>
           </div>
         </div>
       </section>
@@ -332,6 +232,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== TOOLS & SERVICES — Calculator Links ===== */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={IMAGES.calculatorSpotlight} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-slate-900/90" />
+        </div>
+        <div className="container relative z-10">
+          <SectionHeading
+            tag="Tools & Services"
+            title="Clinical Calculator Tools"
+            subtitle="ASNRT provides access to comprehensive nephrology calculator platforms — free for all clinicians and healthcare professionals."
+            light
+          />
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* NephroCalcs */}
+            <motion.a
+              href={NEPHROCALCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="group glass rounded-3xl p-8 hover:bg-white/12 hover:border-emerald-500/30 transition-all cursor-pointer"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/25 group-hover:shadow-emerald-500/40 transition-shadow">
+                <Calculator className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-heading font-bold text-white text-2xl mb-2">NephroCalcs</h3>
+              <p className="text-white/60 text-sm leading-relaxed mb-6">
+                Comprehensive nephrology calculator dashboard with 74 validated clinical tools across 13 categories — including eGFR, electrolytes, acid-base, dialysis adequacy, transplant scoring, and more.
+              </p>
+              <div className="flex items-center gap-2 text-emerald-400 font-semibold group-hover:text-emerald-300 transition-colors">
+                Open NephroCalcs
+                <ExternalLink className="w-4 h-4" />
+              </div>
+            </motion.a>
+
+            {/* OTC Calcs */}
+            <motion.a
+              href={OTCCALCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="group glass rounded-3xl p-8 hover:bg-white/12 hover:border-blue-500/30 transition-all cursor-pointer"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-shadow">
+                <Beaker className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-heading font-bold text-white text-2xl mb-2">OTC Calcs</h3>
+              <p className="text-white/60 text-sm leading-relaxed mb-6">
+                Additional clinical calculators and tools for healthcare professionals — complementary resources for clinical decision-making and patient care management.
+              </p>
+              <div className="flex items-center gap-2 text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">
+                Open OTC Calcs
+                <ExternalLink className="w-4 h-4" />
+              </div>
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       {/* ===== EXECUTIVE COMMITTEE PREVIEW ===== */}
       <section className="py-20 bg-stone-50">
         <div className="container">
@@ -341,7 +306,7 @@ export default function Home() {
             subtitle="Meet the distinguished leaders guiding ASNRT's mission across the Arab world."
           />
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-5">
-            {MEMBERS.map((member, i) => (
+            {MEMBERS.map((member, i: number) => (
               <motion.div
                 key={member.name}
                 custom={i}
@@ -389,7 +354,7 @@ export default function Home() {
               { title: "Patient Education", desc: "Understanding kidney disease, dialysis, and transplantation in accessible language.", icon: <BookOpen className="w-6 h-6" />, href: "/education/patient", color: "bg-blue-50 text-blue-600" },
               { title: "Nursing Education", desc: "Specialized training materials and protocols for nephrology nurses.", icon: <Stethoscope className="w-6 h-6" />, href: "/education/nurses", color: "bg-amber-50 text-amber-600" },
               { title: "Medical Education", desc: "CME resources, case studies, and advanced nephrology topics for physicians.", icon: <GraduationCap className="w-6 h-6" />, href: "/education/doctors", color: "bg-emerald-50 text-emerald-600" },
-            ].map((item, i) => (
+            ].map((item, i: number) => (
               <motion.div
                 key={item.title}
                 custom={i}
@@ -429,7 +394,7 @@ export default function Home() {
             subtitle="Stay updated with the latest research, guidelines, and regulatory news."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {NEWS_ITEMS.slice(0, 3).map((item, i) => (
+            {NEWS_ITEMS.slice(0, 3).map((item, i: number) => (
               <motion.a
                 key={item.title}
                 href={item.url}
@@ -489,7 +454,7 @@ export default function Home() {
             subtitle="Browse photos from ASNRT congresses, forums, and academic gatherings."
           />
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-            {GALLERY_ITEMS.slice(0, 3).map((item, i) => (
+            {GALLERY_ITEMS.slice(0, 3).map((item, i: number) => (
               <motion.div
                 key={item.title}
                 custom={i}
@@ -533,7 +498,7 @@ export default function Home() {
               { title: "Guidelines", desc: "Clinical practice guidelines", href: "/academic/guidelines", icon: <Award className="w-5 h-5" /> },
               { title: "Societies", desc: "Arab & international societies", href: "/societies", icon: <Globe className="w-5 h-5" /> },
               { title: "Membership", desc: "Join ASNRT today", href: "/membership", icon: <Users className="w-5 h-5" /> },
-            ].map((item, i) => (
+            ].map((item) => (
               <Link
                 key={item.title}
                 href={item.href}

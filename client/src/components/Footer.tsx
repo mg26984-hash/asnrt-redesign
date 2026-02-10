@@ -1,11 +1,11 @@
 import { Link } from "wouter";
-import { IMAGES, CALCULATOR_URL, SOCIAL_LINKS } from "@/lib/constants";
-import { Calculator, Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import { IMAGES, NEPHROCALCS_URL, OTCCALCS_URL, SOCIAL_LINKS } from "@/lib/constants";
+import { Calculator, Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink, Beaker } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white/80">
-      {/* Calculator banner */}
+      {/* Calculator tools banner */}
       <div className="bg-gradient-to-r from-emerald-700 to-teal-700">
         <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
@@ -13,19 +13,30 @@ export default function Footer() {
               <Calculator className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h3 className="font-heading font-bold text-white text-lg">74 Clinical Calculators</h3>
-              <p className="text-white/70 text-sm">Across 13 nephrology categories — free for all clinicians</p>
+              <h3 className="font-heading font-bold text-white text-lg">Clinical Calculator Tools</h3>
+              <p className="text-white/70 text-sm">Free nephrology calculators for all clinicians</p>
             </div>
           </div>
-          <a
-            href={CALCULATOR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-white text-emerald-700 rounded-xl font-semibold hover:bg-white/90 transition-colors shadow-lg"
-          >
-            Open Calculator Hub
-            <ExternalLink className="w-4 h-4" />
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href={NEPHROCALCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white text-emerald-700 rounded-xl font-semibold text-sm hover:bg-white/90 transition-colors shadow-lg"
+            >
+              NephroCalcs
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={OTCCALCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white/15 border border-white/25 text-white rounded-xl font-semibold text-sm hover:bg-white/25 transition-colors"
+            >
+              OTC Calcs
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -60,6 +71,7 @@ export default function Footer() {
                 { label: "Executive Committee", href: "/members" },
                 { label: "Education", href: "/education" },
                 { label: "Academic Activities", href: "/academic" },
+                { label: "Events", href: "/events" },
                 { label: "News", href: "/news" },
                 { label: "Gallery", href: "/gallery" },
               ].map((link) => (
@@ -77,7 +89,8 @@ export default function Footer() {
             <h4 className="font-heading font-semibold text-white mb-4">Resources</h4>
             <ul className="space-y-2.5">
               {[
-                { label: "Clinical Calculators", href: CALCULATOR_URL, external: true },
+                { label: "NephroCalcs", href: NEPHROCALCS_URL, external: true },
+                { label: "OTC Calcs", href: OTCCALCS_URL, external: true },
                 { label: "Journals", href: "/academic/journals" },
                 { label: "Guidelines", href: "/academic/guidelines" },
                 { label: "Patient Education", href: "/education/patient" },
@@ -85,7 +98,7 @@ export default function Footer() {
                 { label: "Membership", href: "/membership" },
               ].map((link) => (
                 <li key={link.label}>
-                  {link.external ? (
+                  {"external" in link && link.external ? (
                     <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-emerald-400 transition-colors flex items-center gap-1">
                       {link.label}
                       <ExternalLink className="w-3 h-3" />
@@ -112,6 +125,15 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 mt-0.5 text-emerald-400 shrink-0" />
                 <span className="text-sm text-white/60">Arab World</span>
               </div>
+            </div>
+            <div className="mt-6">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600/20 text-emerald-400 rounded-lg text-sm font-medium hover:bg-emerald-600/30 transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5" />
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>

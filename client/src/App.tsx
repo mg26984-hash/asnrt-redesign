@@ -13,6 +13,8 @@ import News from "./pages/News";
 import Gallery from "./pages/Gallery";
 import Societies from "./pages/Societies";
 import Membership from "./pages/Membership";
+import Events from "./pages/Events";
+import Contact from "./pages/Contact";
 
 function Router() {
   return (
@@ -31,6 +33,8 @@ function Router() {
       <Route path="/societies" component={Societies} />
       <Route path="/societies/:sub" component={Societies} />
       <Route path="/membership" component={Membership} />
+      <Route path="/events" component={Events} />
+      <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

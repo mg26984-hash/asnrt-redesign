@@ -1,7 +1,7 @@
 import { useParams } from "wouter";
 import PageLayout from "@/components/PageLayout";
 import SectionHeading from "@/components/SectionHeading";
-import { IMAGES, CALCULATOR_URL } from "@/lib/constants";
+import { IMAGES, NEPHROCALCS_URL, OTCCALCS_URL } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { Target, Eye, CheckCircle, Globe, Users, BookOpen, Calculator, ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
@@ -124,15 +124,26 @@ function AboutMain() {
               <p className="text-white/70">74 validated tools across 13 nephrology categories</p>
             </div>
           </div>
-          <a
-            href={CALCULATOR_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-white text-emerald-700 rounded-xl font-bold hover:bg-white/90 transition-colors shadow-lg"
-          >
-            Open Calculator Hub
-            <ExternalLink className="w-4 h-4" />
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href={NEPHROCALCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white text-emerald-700 rounded-xl font-bold hover:bg-white/90 transition-colors shadow-lg text-sm"
+            >
+              NephroCalcs
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={OTCCALCS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white/15 border border-white/25 text-white rounded-xl font-bold hover:bg-white/25 transition-colors text-sm"
+            >
+              OTC Calcs
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
       </section>
     </PageLayout>
