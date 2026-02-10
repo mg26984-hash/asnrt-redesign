@@ -11,8 +11,10 @@ import {
   Instagram,
   Linkedin,
   Mail,
+  Search,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import SearchDialog from "./SearchDialog";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
@@ -69,6 +71,7 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [location] = useLocation();
 
   // Close mobile menu on route change
@@ -82,6 +85,18 @@ export default function Header() {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Global Cmd+K / Ctrl+K shortcut
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
   }, []);
 
   const isActive = (href: string) => {
@@ -168,8 +183,31 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Calculator CTA + Mobile toggle */}
+          {/* Search + Calculator CTA + Mobile toggle */}
           <div className="flex items-center gap-2">
+            {/* Search button — desktop */}
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="hidden md:flex items-center gap-2 px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded-xl text-sm text-muted-foreground transition-colors"
+              aria-label="Search"
+            >
+              <Search className="w-4 h-4" />
+              <span className="text-slate-400">Search...</span>
+              <kbd className="ml-1 px-1.5 py-0.5 text-[10px] font-medium bg-white rounded border border-slate-200 text-slate-400">
+                ⌘K
+              </kbd>
+            </button>
+
+            {/* Search button — mobile */}
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+              aria-label="Search"
+            >
+              <Search className="w-5 h-5 text-slate-600" />
+            </button>
+
+            {/* NephroCalcs CTA */}
             <a
               href={NEPHROCALCS_URL}
               target="_blank"
@@ -202,6 +240,18 @@ export default function Header() {
               className="xl:hidden overflow-hidden border-t border-border bg-white"
             >
               <div className="container py-3 max-h-[70vh] overflow-y-auto space-y-0.5">
+                {/* Mobile search bar */}
+                <button
+                  onClick={() => {
+                    setMobileOpen(false);
+                    setTimeout(() => setSearchOpen(true), 100);
+                  }}
+                  className="w-full flex items-center gap-3 px-4 py-3 mb-2 bg-slate-50 rounded-xl text-sm text-muted-foreground"
+                >
+                  <Search className="w-4 h-4" />
+                  Search materials, news, guidelines...
+                </button>
+
                 {NAV_ITEMS.map((item) => (
                   <div key={item.label}>
                     {item.children ? (
@@ -292,6 +342,9 @@ export default function Header() {
           )}
         </AnimatePresence>
       </header>
+
+      {/* Search Dialog */}
+      <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }

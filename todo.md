@@ -62,3 +62,12 @@
 - [x] Ensure all forms are mobile-friendly
 - [x] Improve typography and spacing for small screens
 - [x] Test on mobile viewport sizes
+
+## Phase 12: Site-Wide Search Feature
+- [x] Create SearchDialog component with command palette (cmdk) style
+- [x] Index all site content: education materials, news, pages, guidelines, societies, calculators
+- [x] Implement fuzzy keyword matching with categorized results
+- [x] Add search trigger button in header (desktop + mobile)
+- [x] Support keyboard shortcut (Ctrl+K / Cmd+K) to open search
+- [x] Show categorized results with icons and navigation links
+- [x] Test search across all content types (verified with "dialysis" and "kidney" queries)
