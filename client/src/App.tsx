@@ -4,6 +4,8 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { useServiceWorker } from "./hooks/useServiceWorker";
+import OfflineIndicator from "./components/OfflineIndicator";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Members from "./pages/Members";
@@ -42,11 +44,18 @@ function Router() {
 }
 
 function App() {
+  const { isOffline, updateAvailable, applyUpdate } = useServiceWorker();
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
+          <OfflineIndicator
+            isOffline={isOffline}
+            updateAvailable={updateAvailable}
+            applyUpdate={applyUpdate}
+          />
           <Router />
         </TooltipProvider>
       </ThemeProvider>

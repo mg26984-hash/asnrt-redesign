@@ -78,3 +78,15 @@
 ## Phase 14: Logo Size & Gallery Fix
 - [x] Make logo bigger on mobile while keeping elegant look (h-14 w-14 with rounded-lg)
 - [x] Fix broken ESNT 2017 gallery image (already fixed URL, verify rendering)
+
+## Phase 15: Offline-First PWA
+- [x] Create Service Worker with progressive caching (cache-first for assets, network-first for API)
+- [x] Register Service Worker in main entry without blocking first paint
+- [x] Add PWA web manifest with ASNRT branding (icons, theme color, name)
+- [x] Pre-cache app shell (HTML, CSS, JS bundles) on install
+- [x] Progressively cache all page routes, images, and education PDFs after first load
+- [x] Cache external images (gallery, member photos) via runtime caching
+- [x] Add offline indicator UI so users know when they're offline
+- [x] Add offline fallback page for uncached routes
+- [x] Ensure first-load speed is not compromised (lazy SW registration, no blocking)
+- [x] Write vitest tests for SW registration and offline behavior (14 tests passing)
