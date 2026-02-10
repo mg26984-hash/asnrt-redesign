@@ -1,50 +1,39 @@
 import { Link } from "wouter";
-import { IMAGES, NEPHROCALCS_URL, OTCCALCS_URL, SOCIAL_LINKS } from "@/lib/constants";
-import { Calculator, Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink, Beaker } from "lucide-react";
+import { IMAGES, NEPHROCALCS_URL, SOCIAL_LINKS } from "@/lib/constants";
+import { Calculator, Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white/80">
       {/* Calculator tools banner */}
       <div className="bg-gradient-to-r from-emerald-700 to-teal-700">
-        <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center">
-              <Calculator className="w-6 h-6 text-white" />
+        <div className="container py-5 md:py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-center sm:text-left">
+            <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+              <Calculator className="w-5 h-5 md:w-6 md:h-6 text-white" />
             </div>
             <div>
-              <h3 className="font-heading font-bold text-white text-lg">Clinical Calculator Tools</h3>
-              <p className="text-white/70 text-sm">Free nephrology calculators for all clinicians</p>
+              <h3 className="font-heading font-bold text-white text-base md:text-lg">NephroCalcs — Clinical Calculators</h3>
+              <p className="text-white/70 text-xs md:text-sm">74+ free nephrology calculators for clinicians</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <a
-              href={NEPHROCALCS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-white text-emerald-700 rounded-xl font-semibold text-sm hover:bg-white/90 transition-colors shadow-lg"
-            >
-              NephroCalcs
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href={OTCCALCS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-white/15 border border-white/25 text-white rounded-xl font-semibold text-sm hover:bg-white/25 transition-colors"
-            >
-              OTC Calcs
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
+          <a
+            href={NEPHROCALCS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 bg-white text-emerald-700 rounded-xl font-semibold text-sm hover:bg-white/90 transition-colors shadow-lg shrink-0"
+          >
+            Open NephroCalcs
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
         </div>
       </div>
 
       {/* Main footer */}
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="container py-10 md:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {/* About */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <img src={IMAGES.footerLogo} alt="ASNRT" className="h-10 w-10 object-contain" />
               <div>
@@ -64,8 +53,8 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading font-semibold text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2.5">
+            <h4 className="font-heading font-semibold text-white mb-4 text-sm md:text-base">Quick Links</h4>
+            <ul className="space-y-2">
               {[
                 { label: "About ASNRT", href: "/about" },
                 { label: "Executive Committee", href: "/members" },
@@ -86,16 +75,16 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="font-heading font-semibold text-white mb-4">Resources</h4>
-            <ul className="space-y-2.5">
+            <h4 className="font-heading font-semibold text-white mb-4 text-sm md:text-base">Resources</h4>
+            <ul className="space-y-2">
               {[
                 { label: "NephroCalcs", href: NEPHROCALCS_URL, external: true },
-                { label: "OTC Calcs", href: OTCCALCS_URL, external: true },
                 { label: "Journals", href: "/academic/journals" },
                 { label: "Guidelines", href: "/academic/guidelines" },
                 { label: "Patient Education", href: "/education/patient" },
                 { label: "Nursing Education", href: "/education/nurses" },
                 { label: "Membership", href: "/membership" },
+                { label: "Contact Us", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
                   {"external" in link && link.external ? (
@@ -114,8 +103,8 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-heading font-semibold text-white mb-4">Contact</h4>
+          <div className="col-span-2 md:col-span-1">
+            <h4 className="font-heading font-semibold text-white mb-4 text-sm md:text-base">Contact</h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-0.5 text-emerald-400 shrink-0" />
@@ -126,13 +115,19 @@ export default function Footer() {
                 <span className="text-sm text-white/60">Arab World</span>
               </div>
             </div>
-            <div className="mt-6">
+            <div className="mt-5 flex flex-wrap gap-2">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600/20 text-emerald-400 rounded-lg text-sm font-medium hover:bg-emerald-600/30 transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
                 Contact Us
+              </Link>
+              <Link
+                href="/membership"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white/70 rounded-lg text-sm font-medium hover:bg-white/15 transition-colors"
+              >
+                Join ASNRT
               </Link>
             </div>
           </div>
@@ -142,7 +137,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="border-t border-white/10">
         <div className="container py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-white/40 text-center sm:text-left">
             &copy; {new Date().getFullYear()} Arab Society of Nephrology and Renal Transplantation. All rights reserved.
           </p>
           <div className="flex items-center gap-4">

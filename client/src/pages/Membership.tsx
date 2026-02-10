@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PageLayout from "@/components/PageLayout";
 import SectionHeading from "@/components/SectionHeading";
-import { NEPHROCALCS_URL, OTCCALCS_URL } from "@/lib/constants";
+import { NEPHROCALCS_URL } from "@/lib/constants";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
@@ -14,7 +14,7 @@ import {
 const BENEFITS = [
   { icon: <Globe className="w-5 h-5" />, title: "International Network", desc: "Connect with nephrologists across 22 Arab countries" },
   { icon: <BookOpen className="w-5 h-5" />, title: "Educational Resources", desc: "Access presentations, guidelines, and CME materials" },
-  { icon: <Calculator className="w-5 h-5" />, title: "Clinical Tools", desc: "Free access to NephroCalcs and OTC Calcs" },
+  { icon: <Calculator className="w-5 h-5" />, title: "Clinical Tools", desc: "Free access to NephroCalcs — 74+ clinical calculators" },
   { icon: <Award className="w-5 h-5" />, title: "Congress Access", desc: "Discounted registration for ASNRT congresses" },
   { icon: <Users className="w-5 h-5" />, title: "Collaboration", desc: "Research collaboration opportunities" },
   { icon: <GraduationCap className="w-5 h-5" />, title: "Career Development", desc: "Training programs and fellowship opportunities" },
@@ -264,28 +264,16 @@ export default function Membership() {
               <p className="text-white/70 text-sm">Free nephrology calculators for all clinicians</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <a
-              href={NEPHROCALCS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-white text-emerald-700 rounded-xl font-semibold text-sm hover:bg-white/90 transition-colors shadow-lg"
-            >
-              <Calculator className="w-4 h-4" />
-              NephroCalcs
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href={OTCCALCS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-white/15 border border-white/25 text-white rounded-xl font-semibold text-sm hover:bg-white/25 transition-colors"
-            >
-              <Beaker className="w-4 h-4" />
-              OTC Calcs
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </div>
+          <a
+            href={NEPHROCALCS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 bg-white text-emerald-700 rounded-xl font-semibold text-sm hover:bg-white/90 transition-colors shadow-lg"
+          >
+            <Calculator className="w-4 h-4" />
+            Open NephroCalcs
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
         </div>
       </section>
     </PageLayout>

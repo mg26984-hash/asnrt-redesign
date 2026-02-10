@@ -3,13 +3,14 @@
 // Typography: Outfit (headings) + Plus Jakarta Sans (body)
 // ============================================================
 
-// Calculator tools are services offered by ASNRT — not the main focus
+// Calculator — NephroCalcs is the single calculator service (OTCCalcs redirects to it)
 export const NEPHROCALCS_URL = "https://www.nephrocalcs.xyz/";
-export const OTCCALCS_URL = "https://www.otccalcs.com/";
+// Backward compat
+export const CALCULATOR_URL = NEPHROCALCS_URL;
+export const OTCCALCS_URL = NEPHROCALCS_URL; // same site
+
 export const CALCULATOR_WELCOME_URL = "https://asnrt.org/welcome_page/index.html";
 
-// Backward compat — old pages still import these
-export const CALCULATOR_URL = NEPHROCALCS_URL;
 export const CALCULATOR_CATEGORIES = [
   { name: "Kidney Function", icon: "Activity", count: 8, description: "eGFR, CrCl, and renal function assessment" },
   { name: "Electrolytes", icon: "Zap", count: 7, description: "Sodium, potassium, calcium corrections" },
@@ -202,12 +203,13 @@ export const GALLERY_ITEMS = [
   { title: "14th Congress of ASNRT — Amman, Jordan; 24-27 April 2019", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/hbVkpRprrGGYccLn.webp" },
   { title: "ASNRT Autumn Nephrology Forum and ESNT Clinical Nephrology Chapter, Nov 21-23, 2018", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/sRZLYqTHMPukknPo.webp" },
   { title: "ASNRT Spring Forum", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/trKJgDMoCfYKSTjx.webp" },
-  { title: "ASNRT ESNT 28 Feb – 3 March 2017", image: "https://asnrt.org/storage/galleries/items/asnrt-esnt-2027/001.webp" },
+  { title: "ASNRT ESNT 28 Feb — 3 March 2017", image: "https://asnrt.org/storage/galleries/items/asnrt-esnt-2017/001.webp" },
   { title: "7th EMAN ISN Update Dubai 13-16, Dec 2017", image: "https://asnrt.org/storage/galleries/items/eman-isn-update-dubai-2017/001.webp" },
 ] as const;
 
 // ============================================================
-// EDUCATION MATERIALS — Downloaded from original asnrt.org
+// EDUCATION MATERIALS — Scraped from original asnrt.org
+// All URLs verified against the live site
 // ============================================================
 
 export interface EducationResource {
@@ -224,11 +226,12 @@ export const EDUCATION_MATERIALS = {
       title: "Patient Education — Nephrology",
       description: "Resources to help patients understand kidney disease, CKD stages, and fasting guidelines during Ramadan.",
       resources: [
-        { title: "الصيام في رمضان لمرضى التهابات الكبيبات الكلوية", author: "ASNRT", year: "2025", pdfUrl: "https://asnrt.org/storage/education/patients/nephrology/Fasting-Ramadan-Kidney-Patients-Glomerulonephritis.pdf" },
-        { title: "الصيام في رمضان لمرضى القصور الكلوي المزمن", author: "ASNRT", year: "2025", pdfUrl: "https://asnrt.org/storage/education/patients/nephrology/Fasting-Ramadan-Kidney-Patients-CKD.pdf" },
-        { title: "الصيام في رمضان لمرضى زراعة الكلى", author: "ASNRT", year: "2025", pdfUrl: "https://asnrt.org/storage/education/patients/nephrology/Fasting-Ramadan-Kidney-Patients-Transplant.pdf" },
-        { title: "الصيام في رمضان لمرضى الغسيل الكلوي", author: "ASNRT", year: "2025", pdfUrl: "https://asnrt.org/storage/education/patients/nephrology/Fasting-Ramadan-Kidney-Patients-Dialysis.pdf" },
-        { title: "نظام تصنيف الخطورة للصيام حسب حالة الكلى", author: "ASNRT", year: "2025", pdfUrl: "https://asnrt.org/storage/education/patients/nephrology/Fasting-Ramadan-Risk-Classification.pdf" },
+        { title: "الصيام ومرضى الكلى — التهابات الكبيبات", author: "قسم الكلى", year: "2025", pdfUrl: "https://asnrt.org/storage/education/pdfs/%D8%A7%D9%84%D8%B5%D9%8A%D8%A7%D9%85%20%D9%84%D9%85%D8%B1%D8%B6%D9%89%20%D8%A7%D9%84%D8%A7%D9%84%D8%AA%D9%87%D8%A7%D8%A8%20%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%A8%D9%89.pdf" },
+        { title: "الصيام ومرضى الكلى — مريض القصور الكلوى وزرع الكلى", author: "قسم الكلى", year: "2025", pdfUrl: "https://asnrt.org/storage/education/pdfs/%D8%A7%D9%84%D8%B5%D9%8A%D8%A7%D9%85%20%D9%85%D8%B9%20%D9%85%D8%B1%D8%B6%D9%89%20%D8%A7%D9%84%D9%82%D8%B5%D9%88%D8%B1%20%D8%A7%D9%84%D9%83%D9%84%D9%88%D9%8A%20%D8%A7%D9%84%D9%85%D8%B2%D9%85%D9%86%20%D9%88%D8%B2%D8%B1%D8%B9%20%D8%A7%D9%84%D9%83%D9%84%D9%89.pdf" },
+        { title: "الصيام ومرضى الكلى — فهم امراض الكلى", author: "قسم الكلى", year: "2025", pdfUrl: "https://asnrt.org/storage/education/pdfs/%D9%81%D9%87%D9%85%20%D8%A3%D9%85%D8%B1%D8%A7%D8%B6%20%D8%A7%D9%84%D9%83%D9%84%D9%89%20%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D9%84%D9%81%D8%A9%202.pdf" },
+        { title: "الصيام ومرضى الكلى — ملخص", author: "قسم الكلى", year: "2025", pdfUrl: "https://asnrt.org/storage/education/pdfs/%D9%84%D9%84%D8%B5%D9%8A%D8%A7%D9%85%20%20%D9%85%D9%84%D8%AE%D8%B5%20%D9%84%D8%A7%D9%85%D8%B1%D8%A7%D8%B6%20%D8%A7%D9%84%D9%83%D9%84%D9%89.pdf" },
+        { title: "الصيام ومرضى الكلى — نظام تصنيف الخطوره", author: "قسم الكلى", year: "2025", pdfUrl: "https://asnrt.org/storage/education/pdfs/%D9%86%D8%B8%D8%A7%D9%85%20%D8%AA%D8%B5%D9%86%D9%8A%D9%81%20%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%B1%D8%A9%20%D9%84%D9%84%D8%B5%D9%8A%D8%A7%D9%85%20%D8%AD%D8%B3%D8%A8%20%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%83%D9%84%D9%89%203.pdf" },
+        { title: "مقدمه — الصيام ومرضى الكلى", author: "قسم الكلى", year: "2025", pdfUrl: "https://asnrt.org/storage/education/pdfs/%D8%A7%D9%84%D8%B5%D9%8A%D8%A7%D9%85%20%D9%81%D9%8A%20%D8%B1%D9%85%D8%B6%D8%A7%D9%86%20%D9%84%D8%AC%D9%85%D9%8A%D8%B9%20%D9%85%D8%B1%D8%B6%D9%89%20%D8%A7%D9%84%D9%83%D9%84%D9%89%201.pdf" },
       ] as EducationResource[],
     },
     dialysis: {
@@ -249,7 +252,7 @@ export const EDUCATION_MATERIALS = {
       title: "Nursing Education — Nephrology",
       description: "Clinical nursing practices and training materials for nephrology care.",
       resources: [
-        { title: "DKD Updates — ASNRT Congress Presentation", author: "ASNRT", year: "2025", pdfUrl: "https://asnrt.org/storage/education/nurses/nephrology/DKD-Updates.pdf" },
+        { title: "DKD Updates", author: "Prof. Hussein Sheashaa", event: "ASNRT Congress", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/DKD updates Kwait prof. Hussein Sheashaa.pdf" },
       ] as EducationResource[],
     },
     dialysis: {
@@ -270,7 +273,7 @@ export const EDUCATION_MATERIALS = {
       title: "Medical Education — Nephrology",
       description: "Conference presentations, case studies, and CME resources for nephrologists.",
       resources: [
-        // 2025 GCC Congress
+        // GCC 2025
         { title: "Fluid Management with AKI in Pediatric Practice", author: "Dr. Fatina Fadel", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/Fluid-Management-with-AKI-in-Pediatric-Practice.pdf" },
         { title: "Nephropathology Case Presentation", author: "Riyad Said", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/Nephropathology-Case-Presentation.pdf" },
         { title: "Rare Diseases in Nephrology", author: "Dieter Haffner", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/Rare-Diseases-in-Nephrology.pdf" },
@@ -287,27 +290,28 @@ export const EDUCATION_MATERIALS = {
         { title: "Atypical HUS: Current Approaches and Emerging Innovations", author: "May A Hassaballa", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/Atypical-HUS.pdf" },
         { title: "Cardiorenal Syndrome: Key Points Towards Better Management", author: "Dr. M M Kapoor", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/Cardiorenal-Syndrome.pdf" },
         { title: "Transforming Heart and Kidney Care: Kerendia in CKD and T2D", author: "Dr. Anas Alyousef", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/Transforming-Heart-and-Kidney-Care.pdf" },
-        { title: "DKD: New Insights, New Targets", author: "ASNRT", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/DKD-New-insights-new-targets.pdf" },
-        { title: "ANCA-Associated Vasculitis (AAV) and Avacopan", author: "ASNRT", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/Take-a-closer-look-at-ANCA-associated-vasculitis-AAV-and-avacopan.pdf" },
-        // 2017 Kuwait
-        { title: "Cardiovascular Risk", author: "Dr. Shabbir Moochhala", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/2017-01%20Cardiovasc%20risk%20talk%20Dr.%20Dr%20Shabbir%20Moochhala.pdf" },
-        { title: "IgA Nephropathy", author: "Dr. Joanne M. Bargman", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Kuwait_IgA%20nephropathy%20Dr.%20Joanne%20M.%20Bargman.pdf" },
-        { title: "Lupus Nephritis", author: "Dr. Joanne M. Bargman", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Kuwait_Lupus%20Dr.%20%20Joanne%20M.%20Bargman%20.pdf" },
-        { title: "Measures to Delay Progression of CKD", author: "Dr. Adeera Levin", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Levin%20Measures%20to%20delay%20progression%20Kuwait%202017.pdf" },
-        { title: "Hypertension and CKD", author: "Prof. Riyad Said", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Prof.%20Riyad%20Said%20Hypertension%20and%20CKD%20.pdf" },
-        { title: "Membranous Nephropathy", author: "Dr. Shabbir Moochhala", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/2017-01%20Membranous%20talk%20pres%20Dr%20Shabbir%20Moochhala.pdf" },
-        { title: "Anaemia in CKD", author: "Dr. David Goldsmith", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Anaemia%20in%20CKD%20%20%20Dr.%20David%20Goldsmith.pdf" },
-        { title: "Screening for CKD", author: "Dr. Adeera Levin", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr.%20Adeera%20Levin%20%20Kuwait%202017%20Screening%20for%20CKD.pdf" },
-        { title: "Bone Disease in CKD", author: "Dr. Jhonn Cunningham", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr.%20Jhonn%20cunningham%20-Bone-Kuwait-2017.pdf" },
-        { title: "Vitamin D in CKD", author: "Dr. Magdy Elsharkawy", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr.%20Magdy%20%20Elsharkawy%20VitD%20%20K222%20final.pdf" },
-        { title: "FSGS", author: "Kuwait 2017", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/FSGS_Kuwait_03Jan2017.pdf" },
-        { title: "GCC DOPPS Data", author: "Dr. Saeed M.G Al-Ghamdi", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/GCC_DOPPS_Dr.%20Saeed%20M.G%20Al-Ghamdi_Kuwait_Jan_2017.final.pdf" },
+        { title: "DKD: New Insights, New Targets", author: "Magdy ElSharkawy", event: "GCC 2024", year: "2024", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/DKD-New-insights-new-targets.pdf" },
+        { title: "ANCA-Associated Vasculitis (AAV) and Avacopan", author: "GCC 2023", event: "GCC 2023", year: "2023", pdfUrl: "https://asnrt.org/storage/education/doctors/nephrology/Take-a-closer-look-at-ANCA-associated-vasculitis-AAV-and-avacopan.pdf" },
+        // Kuwait 2017
+        { title: "Cardiovascular Risk", author: "Dr. Shabbir Moochhala", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/2017-01 Cardiovasc risk talk Dr. Dr Shabbir Moochhala.pdf" },
+        { title: "IgA Nephropathy", author: "Dr. Joanne M. Bargman", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Kuwait_IgA nephropathy Dr. Joanne M. Bargman.pdf" },
+        { title: "Lupus Nephritis", author: "Dr. Joanne M. Bargman", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Kuwait_Lupus Dr.  Joanne M. Bargman .pdf" },
+        { title: "Measures to Delay Progression of CKD", author: "Dr. Adeera Levin", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Levin Measures to delay progression Kuwait 2017.pdf" },
+        { title: "Hypertension and CKD", author: "Prof. Riyad Said", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Prof. Riyad Said Hypertension and CKD .pdf" },
+        { title: "Membranous Nephropathy", author: "Dr. Shabbir Moochhala", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/2017-01 Membranous talk pres Dr Shabbir Moochhala.pdf" },
+        { title: "Anaemia in CKD", author: "Dr. David Goldsmith", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Anaemia in CKD   Dr. David Goldsmith.pdf" },
+        { title: "Screening for CKD", author: "Dr. Adeera Levin", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr. Adeera Levin  Kuwait 2017 Screening for CKD.pdf" },
+        { title: "Bone Disease in CKD", author: "Dr. Jhonn Cunningham", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr. Jhonn cunningham -Bone-Kuwait-2017.pdf" },
+        { title: "Vitamin D in CKD", author: "Dr. Magdy Elsharkawy", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr. Magdy  Elsharkawy VitD  K222 final.pdf" },
+        { title: "FSGS", author: "Dr. Flavio Vincenti", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/FSGS_Kuwait_03Jan2017.pdf" },
+        { title: "GCC DOPPS Data", author: "Dr. Saeed M.G Al-Ghamdi", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/GCC_DOPPS_Dr. Saeed M.G Al-Ghamdi_Kuwait_Jan_2017.final.pdf" },
       ] as EducationResource[],
     },
     dialysis: {
       title: "Medical Education — Dialysis",
       description: "Conference presentations on hemodialysis, peritoneal dialysis, and dialysis adequacy.",
       resources: [
+        // GCC 2025
         { title: "Home Hemodialysis", author: "Dr. Reem Ali Asad", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/dialysis/Home-Hemodialysis.pdf" },
         { title: "Advances in Hemodialysis Therapy & Technology", author: "Hesham Elsayed", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/dialysis/Advances-in-Hemodialysis-Therapy-and-Technology.pdf" },
         { title: "RRT in AKI: When, How Much, and Which Modality", author: "Prof. Basset El Essawy", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/dialysis/RRT-in-AKI-when-how-much-and-which-modality.pdf" },
@@ -317,25 +321,66 @@ export const EDUCATION_MATERIALS = {
         { title: "Peritoneal Dialysis: Diabetes in Focus", author: "Ali K. Abu-Alfa", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/dialysis/Peritoneal-Dialysis-Diabetes-in-Focus.pdf" },
         { title: "CKD-Associated Pruritus", author: "Dr. Mohammad Almomen", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/dialysis/Scratching-the-Surface-of-CKD-Associated-Pruritus.pdf" },
         { title: "Preservation of Peritoneal Membrane Structure & Function", author: "Dina Abdellatif", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/dialysis/Preservation-of-Peritoneal-Membrane-Structure-and-Function.pdf" },
-        { title: "Calcimimetics in CKD-MBD", author: "Amgen", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Amgen%20Calcimimetics%20Kuwait%20Jan%202017.pdf" },
-        { title: "HCV in Dialysis Patients", author: "Prof. Dr. Mai", event: "Kuwait 2017", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/prof%20Dr%20Mai%20%20HCV%20Kwait%202017%20final.pdf" },
+        // Kuwait 2017
+        { title: "Calcimimetics in CKD-MBD", author: "Amgen", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Amgen Calcimimetics Kuwait Jan 2017.pdf" },
+        { title: "HCV in Dialysis Patients", author: "Prof. Dr. Mai", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/prof Dr Mai  HCV Kwait 2017 final.pdf" },
+        { title: "Dialysis Initiation", author: "Tarek ElBaz", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/T. ElBaz. Dialysis initiation.pdf" },
+        { title: "Trends in Hb, Iron Use and Ferritin", author: "David Goldsmith", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Trends in Hb, iron use and ferritin 2007-2017.pdf" },
       ] as EducationResource[],
     },
     transplantation: {
       title: "Medical Education — Transplantation",
       description: "Presentations on transplant immunology, rejection, donor management, and post-transplant care.",
       resources: [
-        { title: "Post-Transplant Complications: Malignancies", author: "Dr. Mohamed Abdulmoneem", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Post-transplant-complications-malignancies.pdf" },
-        { title: "Post-Transplant Complications: UTI Prophylaxis", author: "Dr. Mohamed Megahed", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Post-transplant-complications-UTI-prophylaxis.pdf" },
-        { title: "Pre-Transplant Categorization of Immunological Risk", author: "Gamal Saadi", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Pre-Transplant-Categorization-of-Immunological-Risk.pdf" },
-        { title: "Maximizing the Donor Pool", author: "Dr. Peter Dupont", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Maximizing-the-donor-pool.pdf" },
-        { title: "Donor Specific Antibodies", author: "Edward Cole", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Donor-Specific-Antibodies.pdf" },
-        { title: "Management of Post-Transplant GN Recurrence", author: "Robert Najem", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Management-of-Post-Transplant-GN-Recurrence.pdf" },
-        { title: "4th GCC Organ Transplantation & Nephrology Congress", author: "Dr. Colin Forman", event: "GCC 2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/4th-GCC-Organ-Transplantation-Nephrology-Congress.pdf" },
-        { title: "Update in Desensitisation Strategies", author: "Dr. Peter Dupont", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Update-in-desensitisation-strategies.pdf" },
-        { title: "Value of Electron Microscope in Renal Transplant Pathology", author: "Ahmed Abdelfattah Denewar", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Value-of-Electron-Microscope-in-renal-transplant-pathology.pdf" },
-        { title: "BK Virus in Renal Transplantation: Consensus Recommendations", author: "Edward H Cole", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/BK-Virus-in-Renal-Transplantation.pdf" },
-        { title: "Antibody-Mediated Rejection: Present and Future", author: "Dr. Mohamed Alseiari", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Antibody-Mediated-Rejection.pdf" },
+        // GCC 2025 + Recent
+        { title: "Post-Transplant Complications: Malignancies", author: "Dr. Mohamed Abdulmoneem", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/pdfs/Post Renal Transplant Malignancy Dr Mohamed Abdolmoneim.pdf" },
+        { title: "Post-Transplant Complications: UTI Prophylaxis", author: "Dr. Mohamed Megahed", event: "ASNRT Congress", pdfUrl: "https://asnrt.org/storage/education/pdfs/UTI_Prophylaxis_5MB_attempt1.pdf" },
+        { title: "Pre-Transplant Categorization of Immunological Risk", author: "Gamal Saadi", event: "GCC 2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Pre-Transplant-Categorization-of-Immunological-Risk.pdf" },
+        { title: "Maximizing the Donor Pool", author: "Dr. Peter Dupont", event: "GCC 2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Maximizing-the-donor-pool.pdf" },
+        { title: "Donor Specific Antibodies", author: "Edward Cole", event: "GCC 2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Donor-Specific-Antibodies.pdf" },
+        { title: "Management of Post-Transplant GN Recurrence", author: "Robert Najem", event: "GCC 2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/management-of-post-transplant-glomerulonephritis-recurrence.pdf" },
+        { title: "4th GCC Organ Transplantation & Nephrology Congress", author: "Dr. Colin Forman", event: "GCC 2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/GCC-Organ-Transplantation-Nephrology-Congress.pdf" },
+        { title: "Update in Desensitisation Strategies", author: "Dr. Peter Dupont", event: "GCC 2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Update-in-desensitisation-strategies.pdf" },
+        { title: "BK Virus in Renal Transplantation: Consensus Recommendations", author: "Edward H Cole", event: "GCC 2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Consensus-Recommendations-on-Management-of-BK-Virus-in-Renal-Transplantation.pdf" },
+        { title: "Antibody-Mediated Rejection: Present and Future", author: "Dr. Mohamed Alseiari", event: "GCC 2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Antibody-Mediated-Rejection-Present-and-Future.pdf" },
+        { title: "Follow-up Of Kidney Transplant Recipients In 2025", author: "Mohamed Mongi Bacha", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Follow-up-Of-Kidney-Transplant-Recipients-In-2025.pdf" },
+        { title: "Post Kidney Transplantation Fungal Infection", author: "Mohamed Salah El Din Zaki", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Post-Kidney-Transplantation-Fungal-Infection.pdf" },
+        { title: "CMV-Specific Cell-Mediated Immune Response", author: "Ayman Refaie", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/CMV-specific-cell-mediated-immune-response.pdf" },
+        { title: "Management of TMAs in Kidney Transplantation", author: "Dr. Hassan Aleid", event: "GCC 2025", year: "2025", pdfUrl: "https://asnrt.org/storage/education/doctors/transplantation/Management-of-TMAs-in-Kidney-Transplantation.pdf" },
+        // Kuwait 2017
+        { title: "Organ Transplantation in the Arab World", author: "Dr. Adel Bakr", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/dr adel bakr kuwait 2017 organ tx in Arab .pdf" },
+        { title: "Transplant in Immunised Patients", author: "Dr. Glotz", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Tx Immunised-Kowait  Dr Glotz 2017.pdf" },
+        { title: "Update in ABMR Management", author: "Dr. Glotz", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/D. Glotz 2017 update in ABMR management.pdf" },
+        { title: "Molecular Microscope Diagnostics (MMDx)", author: "Prof. Halloran", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/final 60 kuwait MMDx.pdf" },
+        { title: "HCV and Liver Transplantation", author: "Dr. John J. Fung", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/GCC HCV and liver tx DR John J. Fung 2017.pdf" },
+        { title: "Liver Transplantation", author: "Dr. John J. Fung", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/GCC Liver tx  Dr. John J. Fung 2017 .pdf" },
+        { title: "Gender Effect on Transplantation", author: "Dr. Mona Alrukhaimi", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Gender Effect on Transplantation Dr Mona Alrukhaimi.pdf" },
+        { title: "History of Transplantation", author: "Mehmet Haberal", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/History - GCC Kuwait Mehmet Haberal.pdf" },
+        { title: "Islamic Perspective for Organ Transplantation", author: "Zuheir Al-Kawi", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Islamic perpective for organ tx  Zuheir Al-Kawi.pdf" },
+        { title: "Kidney Transplantation in Libya", author: "Dr. Abdulhafid Ali Shebani", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Kidney Transplantation in libya -Dr. Abdulhafid Ali Shebani 2017.pdf" },
+        { title: "Kidney Transplantation in Kuwait", author: "Dr. M. Samhan", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/KTx in Kuwait-Dr M  Samhan  GCC 2017.pdf" },
+        { title: "CNI Minimization", author: "Donald E. Hricik", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Donald E. Hricik  CNI minimization Kuwait 2017.pdf" },
+        { title: "Retransplantation", author: "Dr. Adel Bakr", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/DR ADEL BAKR  retransplantation 2017.pdf" },
+        { title: "Long-term Outcome in Transplantation", author: "Flavio Vincenti", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Kuwait_Long-term_Outcome Flavio Vincenti 2017.pdf" },
+        { title: "Living Donor High Quality", author: "Dr. Martí Manyalich", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Living donor High Quality Dr Martí Manyalich.pdf" },
+        { title: "Lung Transplant Update", author: "Imran Nizami", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Lung Tx Update  Imran Nizami  GCC Kuwait.pdf" },
+        { title: "Organ Failure and Transplantation in Oman", author: "Issa Al-Salmi", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/organ_failure_and_transplantation_in_Oman__Kuwait GCC_meeting_18 Jan_2017_issa_al_salmi.pdf" },
+        { title: "Pregnancy Post Renal Transplant", author: "Dr. Dujanah Mousa", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Pregnancy post Renal Transplant Dr Dujanah Mousa.pdf" },
+        { title: "Rejection Biomarkers", author: "Donald E. Hricik", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Rejection Biomarkers Donald E. Hricik 2017.pdf" },
+        { title: "Risk Stratification", author: "Dr. Mohamed Hany Hafez", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Risk Strati Kuwit2017  Dr Mohamed Hany Hafez.pdf" },
+        { title: "SPK Transplant", author: "Dr. Wael Habhab", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/SPK transplant  Dr. Wael Habhab  KSA.pdf" },
+        { title: "UAE Transplantation", author: "Dr. Ali Abdulkareem Alobaidli", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/UAE Transplantation Kuwait dr. Ali Abdulkareem Alobaidli.pdf" },
+        { title: "Updates in Heart Transplant", author: "Dr. Jehad AlBuraiki", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr Jehad AlBuraiki UPDATES IN HEART TRANSPLANT.pdf" },
+        { title: "CNI Minimization in Kidney Transplant", author: "Donald E. Hricik", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Donald E. Hricik MD  CNI minimisation.pdf" },
+        { title: "Stem Cells: Mansoura Experience", author: "Prof. Mohamed Ghoneim", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Prof Mohamed Ghoneim  Mansoura experience Stemm cells 2017.pdf" },
+        { title: "Steroid-Free Protocols", author: "Dr. Ayman Refaie", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr Ayman Refaie steroid free protocols 2017 .pdf" },
+        { title: "Outcome of Highly Sensitized Transplant", author: "Dr. Edward Cole", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr Edward cole  Highly sensitised.pdf" },
+        { title: "Donation after Circulatory Death (DCD)", author: "Dr. Martí Manyalich", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr Martí Manyalich DCD KUWAIT 2017.pdf" },
+        { title: "Common Medical Problems Post-Transplant", author: "Dr. Peter Dupont", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr Peter Dupont Common medical problems.pdf" },
+        { title: "Current Challenges in Immunosuppression", author: "Dr. Peter Dupont", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr Peter Dupont Current challenges in immunosuppression.pdf" },
+        { title: "Advagraf Conversion and De Novo Clinical Aspects", author: "Dr. Maarten HL Christiaans", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/Dr. Maarten HL Christiaans Christiaans Advagraf conversion and de novo clinical aspects def.pdf" },
+        { title: "Allograft Dysfunction Management", author: "Dr. Edward Cole", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/edward cole  Allograft Dysfunction Management 2017.pdf" },
+        { title: "EPLET MisMatching", author: "Dr. Gamal Saadi", event: "ASNRT Congress Kuwait", year: "2017", pdfUrl: "https://asnrt.org/storage/education/pdfs/EPLET MisMatching Kuwait Dr .Gamal 2017.pdf" },
       ] as EducationResource[],
     },
   },

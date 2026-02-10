@@ -5,7 +5,6 @@ import {
   EDUCATION_CATEGORIES,
   EDUCATION_MATERIALS,
   NEPHROCALCS_URL,
-  OTCCALCS_URL,
   type EducationResource,
 } from "@/lib/constants";
 import { motion } from "framer-motion";
@@ -165,28 +164,16 @@ export default function Education() {
                 <h3 className="font-heading font-bold text-white text-xl mb-2">Clinical Calculator Tools</h3>
                 <p className="text-white/60 text-sm">Access our free nephrology calculators for clinical decision-making.</p>
               </div>
-              <div className="flex items-center gap-3">
-                <a
-                  href={NEPHROCALCS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white rounded-xl font-semibold text-sm hover:bg-emerald-700 transition-colors"
-                >
-                  <Calculator className="w-4 h-4" />
-                  NephroCalcs
-                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-                </a>
-                <a
-                  href={OTCCALCS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 bg-white/10 border border-white/20 text-white rounded-xl font-semibold text-sm hover:bg-white/20 transition-colors"
-                >
-                  <Beaker className="w-4 h-4" />
-                  OTC Calcs
-                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
-                </a>
-              </div>
+              <a
+                href={NEPHROCALCS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white rounded-xl font-semibold text-sm hover:bg-emerald-700 transition-colors shrink-0"
+              >
+                <Calculator className="w-4 h-4" />
+                Open NephroCalcs
+                <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+              </a>
             </div>
           </div>
         </section>

@@ -39,3 +39,26 @@
 
 ## Phase 7: Bug Fixes
 - [x] Fix duplicate "Home" in breadcrumbs
+
+## Phase 8: Breadcrumb Navigation Audit & Enhancement
+- [x] Audit all pages for breadcrumb presence and correctness
+- [x] Fix any missing or broken breadcrumbs (none found — all 20 pages verified)
+- [x] Ensure breadcrumbs work on all sub-pages (education/patient, education/nurses, etc.)
+
+## Phase 9: Consolidate Calculator Links
+- [x] Merge OTCCalcs and NephroCalcs into single "NephroCalcs" link (nephrocalcs.xyz)
+- [x] Update Header, Footer, FAB, Home, About, Membership pages
+- [x] Remove all references to otccalcs.com
+
+## Phase 10: Fix Education Material Links
+- [x] Audit all education PDF links for broken URLs (13 broken found)
+- [x] Fix or replace broken PDF download links (6 Arabic patient PDFs fixed, 1 removed as 404 on original site)
+- [x] Test all education material downloads work (97/97 working, 0 broken)
+
+## Phase 11: Mobile-First Design Revolution
+- [x] Redesign mobile navigation (hamburger menu, touch-friendly)
+- [x] Optimize hero section for mobile
+- [x] Improve card layouts and touch targets for mobile (44px min touch targets)
+- [x] Ensure all forms are mobile-friendly
+- [x] Improve typography and spacing for small screens
+- [x] Test on mobile viewport sizes
