@@ -203,7 +203,7 @@ export const GALLERY_ITEMS = [
   { title: "14th Congress of ASNRT — Amman, Jordan; 24-27 April 2019", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/hbVkpRprrGGYccLn.webp" },
   { title: "ASNRT Autumn Nephrology Forum and ESNT Clinical Nephrology Chapter, Nov 21-23, 2018", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/sRZLYqTHMPukknPo.webp" },
   { title: "ASNRT Spring Forum", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/trKJgDMoCfYKSTjx.webp" },
-  { title: "ASNRT ESNT 28 Feb — 3 March 2017", image: "https://asnrt.org/storage/galleries/items/asnrt-esnt-2017/001.webp" },
+  { title: "ASNRT ESNT 28 Feb — 3 March 2017", image: "https://asnrt.org/storage/galleries/items/asnrt-esnt-2027/001.webp" },
   { title: "7th EMAN ISN Update Dubai 13-16, Dec 2017", image: "https://asnrt.org/storage/galleries/items/eman-isn-update-dubai-2017/001.webp" },
 ] as const;
 

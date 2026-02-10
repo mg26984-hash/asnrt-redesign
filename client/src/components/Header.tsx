@@ -129,7 +129,7 @@ export default function Header() {
         <div className="container flex items-center justify-between py-2.5 md:py-3">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <img src={IMAGES.logo} alt="ASNRT Logo" className="h-10 w-10 md:h-12 md:w-12 object-contain" />
+            <img src={IMAGES.logo} alt="ASNRT Logo" className="h-14 w-14 md:h-14 md:w-14 object-contain rounded-lg" />
             <div className="hidden sm:block">
               <div className="font-heading font-bold text-base md:text-lg leading-tight text-slate-900">ASNRT</div>
               <div className="text-[10px] text-muted-foreground leading-tight">Arab Society of Nephrology<br />& Renal Transplantation</div>

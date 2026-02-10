@@ -71,3 +71,10 @@
 - [x] Support keyboard shortcut (Ctrl+K / Cmd+K) to open search
 - [x] Show categorized results with icons and navigation links
 - [x] Test search across all content types (verified with "dialysis" and "kidney" queries)
+
+## Phase 13: Fix Broken Gallery Image
+- [x] Fix broken image for "ASNRT ESNT 28 Feb — 3 March 2017" gallery card (verified: URL asnrt-esnt-2027 loads correctly)
+
+## Phase 14: Logo Size & Gallery Fix
+- [x] Make logo bigger on mobile while keeping elegant look (h-14 w-14 with rounded-lg)
+- [x] Fix broken ESNT 2017 gallery image (already fixed URL, verify rendering)
