@@ -106,3 +106,6 @@
 
 ## Bug Fix: Calculator Button
 - [x] Removed CalculatorFAB floating button (redundant — NephroCalcs already linked in hero, spotlight, and header)
+
+## Bug Fix: Green N Circle (Manus Overlay)
+- [x] Green N circle is Manus platform visual editor — cannot be removed in dev preview; will not appear in production deployment (developer must remove vitePluginManusRuntime() from vite.config.ts)
