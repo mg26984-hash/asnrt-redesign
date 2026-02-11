@@ -5,6 +5,8 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import {
@@ -44,6 +46,7 @@ const fadeUp = {
 export default function Home() {
   return (
     <PageLayout noBreadcrumb>
+      <SEOHead {...SEO.home} />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">

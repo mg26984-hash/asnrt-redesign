@@ -1,5 +1,7 @@
 import { useParams } from "wouter";
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import { IMAGES, NEPHROCALCS_URL } from "@/lib/constants";
 import { motion } from "framer-motion";
@@ -21,6 +23,7 @@ function AboutMain() {
       pageTitle="About ASNRT"
       pageSubtitle="Advancing nephrology and renal transplantation across the Arab world since 1996."
     >
+      <SEOHead {...SEO.about} />
       {/* Mission & Vision */}
       <section className="py-16 bg-white">
         <div className="container">
@@ -146,6 +149,7 @@ function Constitution() {
       pageTitle="ASNRT Constitution"
       pageSubtitle="The governing document of the Arab Society of Nephrology and Renal Transplantation."
     >
+      <SEOHead {...SEO.aboutConstitution} />
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <div className="prose prose-slate max-w-none">
@@ -184,6 +188,7 @@ function PastPresidents() {
       pageTitle="Past Presidents"
       pageSubtitle="Honoring the leaders who shaped ASNRT's legacy."
     >
+      <SEOHead title="Past Presidents" description="Honoring the distinguished nephrologists who served as Presidents of ASNRT, each contributing to the growth of nephrology in the Arab world." path="/about/past-presidents" />
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <p className="text-lg text-muted-foreground leading-relaxed mb-10 text-center">

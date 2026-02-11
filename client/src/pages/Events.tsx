@@ -1,5 +1,7 @@
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import {
@@ -82,6 +84,7 @@ export default function Events() {
         { label: "Events" },
       ]}
     >
+      <SEOHead {...SEO.events} />
       {/* Upcoming Events */}
       <section className="py-16 bg-white">
         <div className="container">

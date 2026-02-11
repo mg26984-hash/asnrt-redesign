@@ -1,6 +1,8 @@
 import { useParams } from "wouter";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import { ARAB_SOCIETIES, INTERNATIONAL_SOCIETIES } from "@/lib/constants";
 import { motion } from "framer-motion";
@@ -21,6 +23,7 @@ function ArabSocieties() {
       pageTitle="Member Societies"
       pageSubtitle="Arab and international nephrology societies partnering with ASNRT."
     >
+      <SEOHead {...SEO.societies} />
       <section className="py-16 bg-white">
         <div className="container">
           <SectionHeading tag="Arab World" title="Arab Nephrology Societies" />
@@ -75,6 +78,7 @@ function InternationalSocietiesPage() {
       pageTitle="International Societies"
       pageSubtitle="Global nephrology organizations collaborating with ASNRT."
     >
+      <SEOHead title="International Societies" description="Global nephrology organizations collaborating with ASNRT to advance kidney health worldwide." path="/societies/international" />
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <div className="space-y-4">

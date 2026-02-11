@@ -1,5 +1,7 @@
 import { useState } from "react";
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import { NEPHROCALCS_URL } from "@/lib/constants";
 import { trpc } from "@/lib/trpc";
@@ -67,6 +69,7 @@ export default function Membership() {
           { label: "Membership" },
         ]}
       >
+        <SEOHead {...SEO.membership} />
         <section className="py-20 bg-white">
           <div className="container max-w-lg text-center">
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-6">
@@ -100,6 +103,7 @@ export default function Membership() {
         { label: "Membership" },
       ]}
     >
+      <SEOHead {...SEO.membership} />
       {/* Benefits */}
       <section className="py-16 bg-white">
         <div className="container">

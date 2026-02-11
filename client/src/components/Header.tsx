@@ -183,7 +183,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Search + Calculator CTA + Mobile toggle */}
+          {/* Search + Mobile toggle */}
           <div className="flex items-center gap-2">
             {/* Search button — desktop */}
             <button
@@ -207,12 +207,12 @@ export default function Header() {
               <Search className="w-5 h-5 text-slate-600" />
             </button>
 
-            {/* NephroCalcs CTA */}
+            {/* NephroCalcs CTA — mobile only */}
             <a
               href={NEPHROCALCS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 md:px-4 py-2 md:py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-0.5 transition-all duration-200"
+              className="xl:hidden flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl text-sm font-semibold shadow-md shadow-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-0.5 transition-all duration-200"
             >
               <Calculator className="w-4 h-4" />
               <span className="hidden sm:inline">NephroCalcs</span>

@@ -109,3 +109,12 @@
 
 ## Bug Fix: Green N Circle (Manus Overlay)
 - [x] Green N circle is Manus platform visual editor — cannot be removed in dev preview; will not appear in production deployment (developer must remove vitePluginManusRuntime() from vite.config.ts)
+
+## Phase 17: SEO Meta Tags & Back to Top Button
+- [x] Create reusable SEO head component (react-helmet-async with HelmetProvider)
+- [x] Define unique title, description, and Open Graph tags for all 19 routes (seo.ts)
+- [x] Add og:image using ASNRT logo for social media sharing
+- [x] Create smooth Back to Top floating button (appears after 400px scroll, emerald themed)
+- [x] Integrate SEOHead into all 11 page files (19 route-specific meta tags total)
+- [x] All 27 vitest tests passing
+- [x] Remove NephroCalcs green calculator CTA button from header on desktop only (kept on mobile/tablet, hidden on xl breakpoint)

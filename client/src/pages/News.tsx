@@ -1,4 +1,6 @@
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import { NEWS_ITEMS } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { ExternalLink, Calendar, Tag } from "lucide-react";
@@ -18,6 +20,7 @@ export default function News() {
       pageTitle="Nephrology Newsweek"
       pageSubtitle="The latest research, guidelines, and regulatory updates in nephrology and transplantation."
     >
+      <SEOHead {...SEO.news} />
       <section className="py-16 bg-white">
         <div className="container max-w-5xl">
           {/* Featured article */}

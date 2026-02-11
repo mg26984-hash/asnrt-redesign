@@ -1,5 +1,7 @@
 import { useParams } from "wouter";
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import { MEMBERS } from "@/lib/constants";
 import { motion } from "framer-motion";
@@ -19,6 +21,7 @@ function ExecutiveCommittee() {
       pageTitle="Executive Committee"
       pageSubtitle="The leadership team guiding ASNRT's mission and strategic direction."
     >
+      <SEOHead {...SEO.members} />
       <section className="py-16 bg-white">
         <div className="container">
           {/* President */}
@@ -82,6 +85,7 @@ function Coordinators() {
       pageTitle="National Coordinators"
       pageSubtitle="ASNRT representatives in each Arab country, facilitating local activities and communication."
     >
+      <SEOHead title="National Coordinators" description="ASNRT national coordinators representing the society in each Arab country, facilitating local activities and communication." path="/members/coordinators" />
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <div className="space-y-4">

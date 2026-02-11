@@ -1,4 +1,6 @@
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import { GALLERY_ITEMS } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { Camera } from "lucide-react";
@@ -18,6 +20,7 @@ export default function Gallery() {
       pageTitle="Photo Gallery"
       pageSubtitle="Highlights from ASNRT congresses, forums, and academic events."
     >
+      <SEOHead {...SEO.gallery} />
       <section className="py-16 bg-white">
         <div className="container">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

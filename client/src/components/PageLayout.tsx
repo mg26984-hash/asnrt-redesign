@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import Header from "./Header";
 import Footer from "./Footer";
 import Breadcrumb from "./Breadcrumb";
+import BackToTop from "./BackToTop";
 
 
 interface BreadcrumbItem {
@@ -59,6 +60,7 @@ export default function PageLayout({
       <main className="flex-1">{children}</main>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 }

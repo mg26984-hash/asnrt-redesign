@@ -1,6 +1,8 @@
 import { useParams } from "wouter";
 import { Link } from "wouter";
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import { ACADEMIC_ACTIVITIES } from "@/lib/constants";
 import { motion } from "framer-motion";
@@ -21,6 +23,7 @@ function AcademicOverview() {
       pageTitle="Academic Activities"
       pageSubtitle="Journals, guidelines, and academic resources for nephrology professionals."
     >
+      <SEOHead {...SEO.academic} />
       <section className="py-16 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -66,6 +69,7 @@ function Journals() {
       pageTitle="Nephrology Journals"
       pageSubtitle="Arab and international journals covering nephrology, dialysis, and transplantation."
     >
+      <SEOHead {...SEO.academicJournals} />
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <SectionHeading tag="Arab" title="Arab Journals" align="left" />
@@ -110,6 +114,7 @@ function Guidelines() {
       pageTitle="Clinical Practice Guidelines"
       pageSubtitle="Evidence-based guidelines for nephrology clinical practice."
     >
+      <SEOHead {...SEO.academicGuidelines} />
       <section className="py-16 bg-white">
         <div className="container max-w-4xl">
           <SectionHeading tag="Arab" title="Arab Guidelines" align="left" />

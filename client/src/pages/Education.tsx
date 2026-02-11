@@ -1,5 +1,7 @@
 import { Link, useParams } from "wouter";
 import PageLayout from "@/components/PageLayout";
+import SEOHead from "@/components/SEOHead";
+import { SEO } from "@/lib/seo";
 import SectionHeading from "@/components/SectionHeading";
 import {
   EDUCATION_CATEGORIES,
@@ -89,6 +91,7 @@ export default function Education() {
         { label: "Education" },
       ]}
       >
+        <SEOHead {...SEO.education} />
         <section className="py-16 bg-white">
           <div className="container">
             <SectionHeading
@@ -197,6 +200,7 @@ export default function Education() {
         { label: catData.title },
       ]}
     >
+      <SEOHead title={`${catData.title} — Education`} description={catData.description} path={`/education/${category}`} />
       <section className="py-16 bg-white">
         <div className="container">
           <SectionHeading
