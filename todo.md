@@ -90,3 +90,16 @@
 - [x] Add offline fallback page for uncached routes
 - [x] Ensure first-load speed is not compromised (lazy SW registration, no blocking)
 - [x] Write vitest tests for SW registration and offline behavior (14 tests passing)
+
+## Phase 16: Image Compression for Faster Loading
+- [x] Audit all image URLs used across the site (29 images found)
+- [x] Download and compress all images (WebP conversion, quality optimization)
+- [x] Re-upload compressed images to S3 (29/29 uploaded)
+- [x] Update all image URLs in constants.ts, manifest.json, and index.html
+- [x] Verify all images render correctly after compression
+- [x] Measure size reduction: 17.73 MB -> 1.01 MB (94.3% savings)
+
+## Bug Fix: Missing Logo in Header
+- [x] Fix ASNRT logo missing from header navigation bar (logo was always present; green circle is Manus dev tool overlay, not visible in production)
+- [x] Green avatar circle is Manus dev tool overlay — not visible in production builds
+- [x] Replace kidney image with AI-generated elegant 3D kidney illustration with teal glow

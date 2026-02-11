@@ -70,27 +70,27 @@ export const EDUCATION_CATEGORIES: Record<string, EducationCategoryData> = {
 };
 
 export const IMAGES = {
-  logo: "https://asnrt.org/images/asnrt-logo.webp",
-  footerLogo: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/jlqWjvnXVWgrRHHj.webp",
-  heroBg: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/AVnJNtuTJSKuveMA.jpg",
-  calculatorSpotlight: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/YsDiYimgonnZFNXG.jpg",
-  educationBg: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/CJBxwlIErmANObiW.jpg",
-  doctor: "https://asnrt.org/storage/home/doctor.webp",
-  kidney: "https://asnrt.org/storage/home/kidney.webp",
-  asnrtSymbol: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/tHrAVFQxGxJLLCdU.webp",
-  galleryCongress: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/hbVkpRprrGGYccLn.webp",
-  galleryCover2: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/sRZLYqTHMPukknPo.webp",
-  galleryCover3: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/trKJgDMoCfYKSTjx.webp",
+  logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/lCBmnwAFSTZvVShK.webp",
+  footerLogo: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/YwwFoPNHkvVNcSLX.webp",
+  heroBg: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/rnNkyvsNkwNyMewh.webp",
+  calculatorSpotlight: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/DYMJBqulXUOyxZss.webp",
+  educationBg: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/mRdTpsmGoiVxzJNu.webp",
+  doctor: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/zaUoLqcAbsEsqsUg.webp",
+  kidney: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/fSBTwWAVesSosfrx.png",
+  asnrtSymbol: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/DzxiJpjdeUtWCgvk.webp",
+  galleryCongress: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/jGcMPIAMefggRGjz.webp",
+  galleryCover2: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/RiziaHDipIUAJgHC.webp",
+  galleryCover3: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/SuKJMzaKqnAqZxXY.webp",
 } as const;
 
 export const MEMBERS = [
-  { name: "Prof. Torke Alotaibi", role: "President", image: "https://asnrt.org/storage/members/member-1.webp" },
-  { name: "Prof. Amr Hussien", role: "Vice President", image: "https://asnrt.org/storage/members/member-2.webp" },
-  { name: "Prof. Mohamed Ghnaimat", role: "President-Elect", image: "https://asnrt.org/storage/members/member-3.webp" },
-  { name: "Prof. Mohamed Salah", role: "Secretary General", image: "https://asnrt.org/storage/members/member-4.webp" },
-  { name: "Prof. Ahmed Ewaida", role: "Treasurer", image: "https://asnrt.org/storage/members/dr-ahmed-ewaida.webp" },
-  { name: "Prof. Tarek Elbaz", role: "Member at Large", image: "https://asnrt.org/storage/members/member-6.webp" },
-  { name: "Prof. Safa Al-Mukhtar", role: "Member at Large", image: "https://asnrt.org/storage/members/member-7.webp" },
+  { name: "Prof. Torke Alotaibi", role: "President", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/fjqcMKdmaMAhvjbk.webp" },
+  { name: "Prof. Amr Hussien", role: "Vice President", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/oKMJDEHQnLJGKUKj.webp" },
+  { name: "Prof. Mohamed Ghnaimat", role: "President-Elect", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/QOEJiaUiyqbmsXYp.webp" },
+  { name: "Prof. Mohamed Salah", role: "Secretary General", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/PcAZgZbOMhGMIiTX.webp" },
+  { name: "Prof. Ahmed Ewaida", role: "Treasurer", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/LPVMYLbICGuVekPw.webp" },
+  { name: "Prof. Tarek Elbaz", role: "Member at Large", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/RoTZoyHEYyJnNLjg.webp" },
+  { name: "Prof. Safa Al-Mukhtar", role: "Member at Large", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/kBhaNVQWVLIyZXdo.webp" },
 ] as const;
 
 export const SOCIAL_LINKS = {
@@ -153,13 +153,13 @@ export const NEWS_ITEMS = [
 ] as const;
 
 export const ARAB_SOCIETIES = [
-  { name: "Syrian Society of Nephrology, Hypertension and Transplantation", banner: "https://asnrt.org/storage/societies/banners/slide-1.webp" },
-  { name: "Kuwait Nephrology Association", banner: "https://asnrt.org/storage/societies/banners/slide-2.webp" },
-  { name: "The Egyptian Society of Nephrology and Transplantation", banner: "https://asnrt.org/storage/societies/banners/slide-3.webp" },
-  { name: "Lebanese Society of Nephrology & Hypertension", banner: "https://asnrt.org/storage/societies/banners/slide-4.webp" },
-  { name: "Oman Society of Nephrology and Transplantation (OSNT)", banner: "https://asnrt.org/storage/societies/banners/slide-5.webp" },
-  { name: "Jordan Society of Nephrology and Renal Transplantation", banner: "https://asnrt.org/storage/societies/banners/slide-6.webp" },
-  { name: "Fayoum Outreach for Deceased Donor TX", banner: "https://asnrt.org/storage/societies/banners/slide-7.webp" },
+  { name: "Syrian Society of Nephrology, Hypertension and Transplantation", banner: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/RuTyPbiGLJqInPkj.webp" },
+  { name: "Kuwait Nephrology Association", banner: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/RwAKvsYfIOLSYdID.webp" },
+  { name: "The Egyptian Society of Nephrology and Transplantation", banner: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/XgBBWNSqTGWdViBQ.webp" },
+  { name: "Lebanese Society of Nephrology & Hypertension", banner: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/DkbcjumIslvUZAGC.webp" },
+  { name: "Oman Society of Nephrology and Transplantation (OSNT)", banner: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/rcZptrtvqMJVMnLd.webp" },
+  { name: "Jordan Society of Nephrology and Renal Transplantation", banner: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/YLbPJhFYpLTeuxPo.webp" },
+  { name: "Fayoum Outreach for Deceased Donor TX", banner: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/WcLPZimbadhSKlJk.webp" },
 ] as const;
 
 export const INTERNATIONAL_SOCIETIES = [
@@ -200,11 +200,11 @@ export const ACADEMIC_ACTIVITIES = {
 } as const;
 
 export const GALLERY_ITEMS = [
-  { title: "14th Congress of ASNRT — Amman, Jordan; 24-27 April 2019", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/hbVkpRprrGGYccLn.webp" },
-  { title: "ASNRT Autumn Nephrology Forum and ESNT Clinical Nephrology Chapter, Nov 21-23, 2018", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/sRZLYqTHMPukknPo.webp" },
-  { title: "ASNRT Spring Forum", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/trKJgDMoCfYKSTjx.webp" },
-  { title: "ASNRT ESNT 28 Feb — 3 March 2017", image: "https://asnrt.org/storage/galleries/items/asnrt-esnt-2027/001.webp" },
-  { title: "7th EMAN ISN Update Dubai 13-16, Dec 2017", image: "https://asnrt.org/storage/galleries/items/eman-isn-update-dubai-2017/001.webp" },
+  { title: "14th Congress of ASNRT — Amman, Jordan; 24-27 April 2019", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/jGcMPIAMefggRGjz.webp" },
+  { title: "ASNRT Autumn Nephrology Forum and ESNT Clinical Nephrology Chapter, Nov 21-23, 2018", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/RiziaHDipIUAJgHC.webp" },
+  { title: "ASNRT Spring Forum", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/SuKJMzaKqnAqZxXY.webp" },
+  { title: "ASNRT ESNT 28 Feb — 3 March 2017", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/ArGODmTWkHpMzimo.webp" },
+  { title: "7th EMAN ISN Update Dubai 13-16, Dec 2017", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030645861/cRLWLcNuoKWMrAIS.webp" },
 ] as const;
 
 // ============================================================
