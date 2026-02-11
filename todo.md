@@ -103,3 +103,6 @@
 - [x] Fix ASNRT logo missing from header navigation bar (logo was always present; green circle is Manus dev tool overlay, not visible in production)
 - [x] Green avatar circle is Manus dev tool overlay — not visible in production builds
 - [x] Replace kidney image with AI-generated elegant 3D kidney illustration with teal glow
+
+## Bug Fix: Calculator Button
+- [x] Removed CalculatorFAB floating button (redundant — NephroCalcs already linked in hero, spotlight, and header)

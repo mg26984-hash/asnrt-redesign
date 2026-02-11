@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import Header from "./Header";
 import Footer from "./Footer";
 import Breadcrumb from "./Breadcrumb";
-import CalculatorFAB from "./CalculatorFAB";
+
 
 interface BreadcrumbItem {
   label: string;
@@ -58,7 +58,6 @@ export default function PageLayout({
 
       <main className="flex-1">{children}</main>
 
-      <CalculatorFAB />
       <Footer />
     </div>
   );
